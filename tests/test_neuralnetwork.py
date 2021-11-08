@@ -24,7 +24,7 @@ class TestLayer(unittest.TestCase):
         nn = NeuralNetwork(Ms, Bs, Fs)
         Ls = nn.getLayers()
         for i in range(len(Ls)):
-            self.assertTrue(type(Ls[i]) == Layer)
+            self.assertTrue(isinstance(Ls[i], Layer))
             self.assertTrue( (Ls[i].getMatrix() == Ms[i]).all() )
             self.assertTrue( (Ls[i].getBiasVector() == Bs[i]).all() )
             self.assertTrue( Ls[i].getFunction() == Fs[i] )
